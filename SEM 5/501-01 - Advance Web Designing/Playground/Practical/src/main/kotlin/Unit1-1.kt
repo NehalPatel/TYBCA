@@ -20,6 +20,7 @@ fun main(){
     var name = "Nehal Patel"
     var age = 37
 
+    print(name)
     println("My name is " + name)
     //println("My name is $name")
     println("I am $age years old")
@@ -31,16 +32,16 @@ fun main(){
     var college:String = "SDJ International College"
     val established:Int = 2012
     var isAdmissionOpen:Boolean = false
-    // var myInvalidInt:Int = "test";  //compile error
+//     var myInvalidInt:Int = "test";  //compile error
 
 
     //declare variable then assign value to it
-    val address:String;
+    var address:String;
     address = "Vesu, Surat"
 
     // cannot declare variable without assigning datatype and value
-    // var test //error
-    // test = "something"
+//     var test //error
+//     test = "something"
 
     val myNum = 5             // Int
     val myDoubleNum = 5.99    // Double
@@ -75,8 +76,8 @@ fun main(){
 
     println("length of string is ${myName.length}")
     //String functions
-    println("length of string is ${myName.toUpperCase()}")
-    println("length of string is ${myName.toLowerCase()}")
+    println("Uppercase : ${myName.toUpperCase()}")
+    println("Lowercase: ${myName.toLowerCase()}")
 
     //Compare
     var txt1 = "Hello World"
@@ -97,5 +98,14 @@ fun main(){
     println(firstName + " " + lastName)
     println(firstName.plus(lastName))
     println("My name is $firstName $lastName")
+
+    /**
+     * Null Safety
+     */
+    var userName: String? = null
+    var myAge: Int? = null
+    
+    var collegename: String = "SDJ International College"
+    // collegename = null //compilation error
 
 }

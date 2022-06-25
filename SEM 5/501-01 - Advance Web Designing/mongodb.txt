@@ -1,0 +1,32 @@
+Create /Swithch Database
+use mydb
+
+View current database
+> db
+
+Create new Collection in database
+> db.createCollection("posts")
+
+Insert a new document
+> db.posts.insert({
+	title: "MongoDB Overview",
+	description: "MongoDB is no sql database"
+});
+
+db.posts.insertOne({})
+db.posts.insertMany([{}, {}, {}])
+
+Insert Multiple documents
+> db.posts.insert([{
+		title: "Post 2",
+		description: "Post 2 conents"
+	},
+	{
+		title: "Post 3",
+		description: "Post 3 conents"
+	}
+]);
+
+db.posts.find()
+db.posts.find().pretty()
+
