@@ -19,11 +19,11 @@ db.posts.insertMany([{}, {}, {}])
 Insert Multiple documents
 > db.posts.insert([{
 		title: "Post 2",
-		description: "Post 2 conents"
+		description: "Post 2 content"
 	},
 	{
 		title: "Post 3",
-		description: "Post 3 conents"
+		description: "Post 3 content"
 	}
 ]);
 
