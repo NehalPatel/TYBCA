@@ -1,5 +1,8 @@
+Show all the databases
+> show dbs
+
 Create /Swithch Database
-use mydb
+> use mydb
 
 View current database
 > db
