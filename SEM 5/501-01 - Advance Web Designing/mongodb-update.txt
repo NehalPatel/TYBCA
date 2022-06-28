@@ -1,0 +1,34 @@
+db.employees.insertMany(
+	[
+		{
+			First_Name: "Radhika",
+			Last_Name: "Sharma",
+			Age: "26",
+			e_mail: "radhika_sharma.123@gmail.com",
+			phone: "9000012345"
+		},
+		{
+			First_Name: "Rachel",
+			Last_Name: "Christopher",
+			Age: "27",
+			e_mail: "Rachel_Christopher.123@gmail.com",
+			phone: "9000054321"
+		},
+		{
+			First_Name: "Fathima",
+			Last_Name: "Sheik",
+			Age: "24",
+			e_mail: "Fathima_Sheik.123@gmail.com",
+			phone: "9000054321"
+		}
+	]
+)
+
+Update 
+> db.employees.update({First_Name: "Rachel"}, {$set: {First_Name: "Ross"}})
+
+MongoDB findOneAndUpdate() method
+> db.employees.findOneAndUpdate(
+	{First_Name: 'Radhika'},
+	{ $set: { Age: '30',e_mail: 'radhika_newemail@gmail.com'}}
+)

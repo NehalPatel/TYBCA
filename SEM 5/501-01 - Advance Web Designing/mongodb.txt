@@ -33,3 +33,77 @@ Insert Multiple documents
 db.posts.find()
 db.posts.find().pretty()
 
+> db.posts.insert([
+	{
+		title: "MongoDB Overview",
+		description: "MongoDB is no SQL database",
+		by: "tutorials point",
+		url: "http://www.tutorialspoint.com",
+		tags: ["mongodb", "database", "NoSQL"],
+		likes: 100
+	},
+	{
+		title: "NoSQL Database",
+		description: "NoSQL database doesn't have tables",
+		by: "tutorials point",
+		url: "http://www.tutorialspoint.com",
+		tags: ["mongodb", "database", "NoSQL"],
+		likes: 20,
+		comments: [
+			{
+				user:"user1",
+				message: "My first comment",
+				dateCreated: new Date(2013,11,10,2,35),
+				like: 0
+			}
+		]
+	}
+])
+
+
+The findOne() method
+> db.posts.findOne({title: "MongoDB Overview"})
+
+Equality
+> db.posts.find({"by":"tutorials point"}).pretty()
+
+Less Than
+> db.posts.find({"likes":{$lt:50}}).pretty()
+
+Less Than Equals
+> db.posts.find({"likes":{$lte:50}}).pretty()
+
+Greater Than
+> db.posts.find({"likes":{$gt:50}}).pretty()
+
+Greater Than Equals
+> db.posts.find({"likes":{$gte:50}}).pretty()
+
+Not Equals
+> db.posts.find({"likes":{$ne:50}}).pretty()
+
+Values in an array
+> db.posts.find({"name":{$in:["Raj", "Ram", "Raghu"]}}).pretty()
+
+Values not in an array
+> db.posts.find({"name":{$nin:["Ramu", "Raghav"]}}).pretty()
+
+===================================================================
+AND in MongoDB
+> db.posts.find({$and:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty()
+
+OR in MongoDB
+> db.posts.find({$or:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty()
+
+Using AND and OR Together
+>db.mycol.find({"likes": {$gt:10}, $or: [{"by": "tutorials point"}, {"title": "MongoDB Overview"}]}).pretty()
+
+'where likes>10 AND (by = 'tutorials point' OR title = 'MongoDB Overview')'
+===================================================================
+NOR in MongoDB
+db.COLLECTION_NAME.find({ $nor: [{key1: value1}, {key2:value2}] })
+
+NOT in MongoDB
+db.COLLECTION_NAME.find({ $not: [{key1: value1}, {key2:value2}] })
+
+> db.empDetails.find( { "Age": { $not: { $gt: "25" } } } )
