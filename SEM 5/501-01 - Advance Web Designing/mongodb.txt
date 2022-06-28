@@ -107,3 +107,8 @@ NOT in MongoDB
 db.COLLECTION_NAME.find({ $not: [{key1: value1}, {key2:value2}] })
 
 > db.empDetails.find( { "Age": { $not: { $gt: "25" } } } )
+
+==================================================
+Database drop commands
+> 
+
